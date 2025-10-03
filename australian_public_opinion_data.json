@@ -1,0 +1,100 @@
+{
+  "Economy & Tax": {
+    "progressive": 35,
+    "moderate": 40,
+    "conservative": 25,
+    "source": "Roy Morgan 2025 - Cost of living concerns (57%) drive mixed attitudes",
+    "notes": "Australians prioritize cost of living relief but are divided on taxation approaches"
+  },
+  "Healthcare": {
+    "progressive": 52,
+    "moderate": 32,
+    "conservative": 16,
+    "source": "Australian Health Consumer Sentiment Survey 2021 - 84% satisfied with current services",
+    "notes": "Strong support for public healthcare, but concerns about workforce and costs"
+  },
+  "Housing": {
+    "progressive": 48,
+    "moderate": 35,
+    "conservative": 17,
+    "source": "University of Sydney 2025 - Housing crisis impacts most sectors of society",
+    "notes": "Housing crisis creates broad support for government action across political spectrum"
+  },
+  "Climate & Energy": {
+    "progressive": 43,
+    "moderate": 37,
+    "conservative": 20,
+    "source": "Lowy Institute Poll 2025 - 51% say urgent action needed, 33% gradual approach",
+    "notes": "Climate concern declining slightly but majority still want action"
+  },
+  "Immigration": {
+    "progressive": 28,
+    "moderate": 40,
+    "conservative": 32,
+    "source": "Lowy Institute 2024 & Roy Morgan 2025 - 48% think intake too high, but 90% support multiculturalism",
+    "notes": "Contradictory views: support diversity but want lower immigration numbers"
+  },
+  "Education": {
+    "progressive": 42,
+    "moderate": 38,
+    "conservative": 20,
+    "source": "Roy Morgan 2025 - Education ranks 10th in voter priorities at 14%",
+    "notes": "Education not a top priority but broad support for public education investment"
+  },
+  "Cost of Living": {
+    "progressive": 45,
+    "moderate": 35,
+    "conservative": 20,
+    "source": "Roy Morgan 2025 - 57% cite keeping costs down as most important issue",
+    "notes": "Top voter concern driving support for government intervention"
+  },
+  "Defence & Security": {
+    "progressive": 20,
+    "moderate": 45,
+    "conservative": 35,
+    "source": "Lowy Institute Poll 2025 - Mixed views on AUKUS and regional security",
+    "notes": "Bipartisan support for strong defence but debate over approach"
+  },
+  "Social Services": {
+    "progressive": 46,
+    "moderate": 35,
+    "conservative": 19,
+    "source": "Australian Health Consumer Sentiment Survey 2021 - Strong support for disability and aged care",
+    "notes": "Broad support for social safety net, concerns about sustainability"
+  },
+  "Infrastructure": {
+    "progressive": 38,
+    "moderate": 45,
+    "conservative": 17,
+    "source": "Roy Morgan 2025 - Infrastructure linked to regional development priorities",
+    "notes": "Broad bipartisan support for infrastructure investment"
+  },
+  "Regional Australia": {
+    "progressive": 32,
+    "moderate": 42,
+    "conservative": 26,
+    "source": "Roy Morgan 2025 - Regional concerns about services and infrastructure",
+    "notes": "Strong cross-party support for regional development with different priorities"
+  },
+  "Workers Rights": {
+    "progressive": 41,
+    "moderate": 38,
+    "conservative": 21,
+    "source": "Roy Morgan 2025 - Worker concerns embedded in cost of living issues",
+    "notes": "Support for worker protection amid cost of living pressures"
+  },
+  "Indigenous Affairs": {
+    "progressive": 38,
+    "moderate": 40,
+    "conservative": 22,
+    "source": "Post-Voice referendum polling 2023-2024 - Divided but majority support reconciliation",
+    "notes": "Voice referendum defeat but continued support for reconciliation measures"
+  },
+  "Technology & Innovation": {
+    "progressive": 35,
+    "moderate": 50,
+    "conservative": 15,
+    "source": "Various polls 2024-2025 - Technology generally seen as positive",
+    "notes": "Broad support for innovation with concerns about privacy and regulation"
+  }
+}

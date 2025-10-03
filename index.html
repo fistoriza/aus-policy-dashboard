@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australian Political Parties Policy Dashboard with Public Opinion</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="container">
+                <h1>Australian Political Parties Policy Dashboard</h1>
+                <p class="dashboard-subtitle">Compare party positions with public opinion across key policy areas</p>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <section class="nav-tabs-section">
+            <div class="container">
+                <div class="nav-tabs">
+                    <button id="policy-tab" class="nav-tab active">Policy Analysis</button>
+                    <button id="opinion-tab" class="nav-tab">Public Opinion Overview</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Policy Analysis View -->
+        <div id="policy-view" class="view-section">
+            <!-- Controls Section -->
+            <section class="controls-section">
+                <div class="container">
+                    <div class="controls-grid">
+                        <!-- Policy Area Selection -->
+                        <div class="control-group">
+                            <label for="policy-select" class="form-label">Select Policy Area</label>
+                            <select id="policy-select" class="form-control policy-selector">
+                                <option value="">Choose a policy area...</option>
+                            </select>
+                        </div>
+
+                        <!-- Search -->
+                        <div class="control-group">
+                            <label for="party-search" class="form-label">Search Parties</label>
+                            <input type="text" id="party-search" class="form-control" placeholder="Search party names...">
+                        </div>
+
+                        <!-- Alignment Filter -->
+                        <div class="control-group">
+                            <label for="alignment-filter" class="form-label">Filter by Public Alignment</label>
+                            <select id="alignment-filter" class="form-control">
+                                <option value="">All parties</option>
+                                <option value="aligned">Aligned with majority opinion</option>
+                                <option value="moderate-alignment">Partially aligned</option>
+                                <option value="misaligned">Against majority opinion</option>
+                            </select>
+                        </div>
+
+                        <!-- View Toggle -->
+                        <div class="control-group">
+                            <label for="view-toggle" class="form-label">Display Mode</label>
+                            <select id="view-toggle" class="form-control">
+                                <option value="with-opinion">With Public Opinion</option>
+                                <option value="parties-only">Parties Only</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Public Opinion Summary -->
+                    <div id="opinion-summary" class="opinion-summary hidden">
+                        <div class="opinion-header">
+                            <h3 id="opinion-title">Public Opinion on Selected Policy</h3>
+                            <p id="opinion-source" class="opinion-source"></p>
+                        </div>
+                        <div class="opinion-content">
+                            <div class="opinion-chart-container">
+                                <canvas id="opinion-chart"></canvas>
+                            </div>
+                            <div class="opinion-breakdown">
+                                <div class="opinion-stat">
+                                    <span class="opinion-label progressive">Progressive</span>
+                                    <span id="progressive-percent" class="opinion-percent">0%</span>
+                                </div>
+                                <div class="opinion-stat">
+                                    <span class="opinion-label moderate">Moderate</span>
+                                    <span id="moderate-percent" class="opinion-percent">0%</span>
+                                </div>
+                                <div class="opinion-stat">
+                                    <span class="opinion-label conservative">Conservative</span>
+                                    <span id="conservative-percent" class="opinion-percent">0%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="opinion-notes" class="opinion-notes"></div>
+                    </div>
+
+                    <!-- Info Panel -->
+                    <div id="info-panel" class="info-panel">
+                        <div class="info-content">
+                            <h3>Welcome to the Enhanced Policy Dashboard</h3>
+                            <p>Select a policy area above to see how Australian political parties position themselves and how their stances align with public opinion. This dashboard now includes comprehensive polling data to show what Australians really think about each issue.</p>
+                            <div class="stats">
+                                <span class="stat-item"><strong>10</strong> Political Parties</span>
+                                <span class="stat-item"><strong>14</strong> Policy Areas</span>
+                                <span class="stat-item"><strong>Public Opinion</strong> Data Included</span>
+                                <span class="stat-item">Last Updated: <strong>October 2025</strong></span>
+                            </div>
+                            <div class="info-features">
+                                <h4>New Features</h4>
+                                <ul>
+                                    <li>Public opinion breakdowns for each policy area</li>
+                                    <li>Party-to-public alignment indicators</li>
+                                    <li>Comprehensive public opinion overview</li>
+                                    <li>Enhanced filtering and comparison tools</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section">
+                <div class="container">
+                    <div id="results-header" class="results-header hidden">
+                        <h2 id="current-policy-title">Policy Positions</h2>
+                        <p id="results-count" class="results-count"></p>
+                    </div>
+
+                    <div id="parties-grid" class="parties-grid">
+                        <!-- Party cards will be dynamically inserted here -->
+                    </div>
+
+                    <div id="no-results" class="no-results hidden">
+                        <h3>No parties found</h3>
+                        <p>Try adjusting your search terms or filters.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Public Opinion Overview -->
+        <div id="opinion-view" class="view-section hidden">
+            <section class="opinion-overview-section">
+                <div class="container">
+                    <div class="overview-header">
+                        <h2>Public Opinion Overview</h2>
+                        <p class="overview-subtitle">How Australians feel across all policy areas</p>
+                    </div>
+
+                    <div class="overview-grid">
+                        <div class="overview-chart-container">
+                            <h3>Opinion Distribution Across All Issues</h3>
+                            <canvas id="overview-chart"></canvas>
+                        </div>
+
+                        <div class="consensus-analysis">
+                            <h3>Issue Consensus Analysis</h3>
+                            <div id="consensus-list" class="consensus-list">
+                                <!-- Consensus data will be inserted here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="party-alignment-section">
+                        <h3>Party Alignment with Public Opinion</h3>
+                        <div id="alignment-chart-container">
+                            <canvas id="alignment-chart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="methodology-section">
+                        <h3>Data Sources & Methodology</h3>
+                        <div class="methodology-content">
+                            <p>This dashboard incorporates public opinion data from leading Australian polling organizations:</p>
+                            <ul id="data-sources">
+                                <!-- Data sources will be populated here -->
+                            </ul>
+                            <p><strong>Methodology:</strong> Progressive/Moderate/Conservative classifications are based on policy position analysis and polling responses. Alignment scores calculated by comparing party positions with majority public opinion on each issue.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Enhanced Comparison Modal -->
+        <div id="comparison-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Enhanced Party Comparison</h3>
+                    <button id="close-modal" class="modal-close">&times;</button>
+                </div>
+                <div id="comparison-content" class="modal-body">
+                    <!-- Comparison content will be inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
